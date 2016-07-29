@@ -71,10 +71,10 @@ xhttp.onreadystatechange = function()
       }
     }
 
-    xhttptwo.open("POST","http://www.localhost.com:8000/app_dev.php/course/storyline/email/ajax/use/" + window.token, true);
+    xhttptwo.open("POST","http://cttpweb.uark.edu/dyn/course/storyline/email/ajax/use/" + window.token, true);
     xhttptwo.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttptwo.send(postString);
   }
 };
-xhttp.open("POST","http://www.localhost.com:8000/app_dev.php/course/storyline/email/ajax/get/token", true);
+xhttp.open("POST","http://cttpweb.uark.edu/dyn/course/storyline/email/ajax/get/token", true);
 xhttp.send();

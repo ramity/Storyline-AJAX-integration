@@ -18,9 +18,9 @@ window.database_parameters = [
   'isAhtd'
 ];
 
-//first ajax request
-window.token = 0;
+var token = 0;
 var xhttp = new XMLHttpRequest();
+var base_url = window.location.protocol + "//" + window.location.host;
 
 xhttp.onreadystatechange = function()
 {
@@ -71,10 +71,10 @@ xhttp.onreadystatechange = function()
       }
     }
 
-    xhttptwo.open("POST","http://cttpweb.uark.edu/dyn/course/storyline/email/ajax/use/" + window.token, true);
+    xhttptwo.open("POST", base_url + "/dyn/course/storyline/email/ajax/use/" + window.token, true);
     xhttptwo.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttptwo.send(postString);
   }
 };
-xhttp.open("POST","http://cttpweb.uark.edu/dyn/course/storyline/email/ajax/get/token", true);
+xhttp.open("POST", base_url + "/dyn/course/storyline/email/ajax/get/token", true);
 xhttp.send();

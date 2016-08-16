@@ -69,7 +69,7 @@ xhttp.onreadystatechange = function()
       }
     }
 
-    xhttptwo.open("POST", base_url + "/dyn/course/storyline/email/ajax/use/" + window.token, true);
+    xhttptwo.open("POST", base_url + "/dyn/course/storyline/email/ajax/use/token", true);
     xhttptwo.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhttptwo.send(postString);
   }

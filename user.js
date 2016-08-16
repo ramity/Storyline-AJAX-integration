@@ -52,14 +52,12 @@ xhttp.onreadystatechange = function()
       }
     };
 
-    //prod
     var player = GetPlayer();
 
     postString = '';
 
     for(z=0;z<database_parameters.length;z++)
     {
-      //prod
       if(database_parameters[z] == 'grade')
       {
         //value is hardcoded

@@ -1,24 +1,3 @@
-window.player_parameters = [
-  'AHTDName',
-  'course',
-  'NONcompany',
-  'g_oContentResults.nScore',
-  'AHTDRE',
-  'NONstate',
-  'isAHTD'
-];
-
-window.database_parameters = [
-  'name',
-  'course',
-  'company',
-  'grade',
-  're',
-  'state',
-  'isAhtd'
-];
-
-var token = 0;
 var xhttp = new XMLHttpRequest();
 var base_url = window.location.protocol + "//" + window.location.host;
 
@@ -29,8 +8,10 @@ xhttp.onreadystatechange = function()
     //converts responseText into JSON array/obj
     data = JSON.parse(xhttp.responseText);
 
-    //gets token from response
-    window.token = data.token;
+    if(!data.resp)
+    {
+      console.log(data.error);
+    }
 
     //second ajax request
     var xhttptwo = new XMLHttpRequest();
@@ -45,14 +26,28 @@ xhttp.onreadystatechange = function()
         {
           console.log(data.error);
         }
-        else
-        {
-          console.log('Success');
-        }
       }
     };
 
     var player = GetPlayer();
+    var database_parameters = [
+      'name',
+      'course',
+      'company',
+      'grade',
+      're',
+      'state',
+      'isAhtd'
+    ];
+    var player_parameters = [
+      'AHTDName',
+      'course',
+      'NONcompany',
+      'g_oContentResults.nScore',
+      'AHTDRE',
+      'NONstate',
+      'isAHTD'
+    ];
 
     postString = '';
 
